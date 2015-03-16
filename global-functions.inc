@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+if [ -n "$_GLOBAL_FUNCTIONS_" ]; then
+	return
+fi;
+
+$_GLOBAL_FUNCTIONS_=1
+
 function validate_param {
 	# Param is empty
 	if [ -z "$1" ]; then
