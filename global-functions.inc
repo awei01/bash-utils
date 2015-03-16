@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-if [ -n "$_GLOBAL_FUNCTIONS_" ]; then
+if [ -z "$_GLOBAL_FUNCTIONS_" ]; then
 	return
 fi;
 
-$_GLOBAL_FUNCTIONS_=1
+readonly _GLOBAL_FUNCTIONS_=1
 
 function validate_param {
 	# Param is empty
