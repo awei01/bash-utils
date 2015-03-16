@@ -62,14 +62,17 @@ function copy_configs {
 	if ! file_exists $1; then
 		return 1
 	fi
+
 	validate_param $2 "Destination path not given."
 
-	if [ ! -d $_BUILDDIR_ ]; then
-		sudo mkdir $_BUILDDIR_
+	validate_param $3 "Temporary build path not given."
+
+	if [ ! -d $3 ]; then
+		sudo mkdir $3
 	fi
 
 	# Replace slashes
-	local TEMP=$_BUILDDIR_/"${1//\//-}"
+	local TEMP=$3/"${1//\//-}"
 	cp $1 $TEMP
 	local MATCHES=$( grep -o '{[A-Z]\{1,\}_[A-Z]\{1,\}}' $TEMP | sort | uniq )
 	if [ -n "$MATCHES" ]; then

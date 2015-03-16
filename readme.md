@@ -14,7 +14,6 @@ Using subtree: http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-
 ```
 #!/usr/bin/env bash
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-_BUILDDIR_=/path/to/a/temp/dir
 source $DIR/path/to/global-functions.inc
 
 validate_param "foo"
