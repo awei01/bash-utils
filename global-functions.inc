@@ -26,9 +26,9 @@ function file_exists {
 	return 0
 }
 
-# Service installed
-function service_installed {
-	validate_param $1 "No service given"
+# Package installed
+function package_installed {
+	validate_param $1 "No package given"
 
 	if dpkg -s $1 | grep -q "install ok installed"; then
 		return 0
