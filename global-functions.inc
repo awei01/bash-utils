@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -z "$_GLOBAL_FUNCTIONS_" ]; then
+if [ -n "$_GLOBAL_FUNCTIONS_" ]; then
 	return
 fi;
 
